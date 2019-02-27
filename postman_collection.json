@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "1202ed71-cfe0-42e7-9176-22eb851b85e4",
+		"name": "\bAPI-Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/shopee/test?a=8&b=string",
+			"item": [
+				{
+					"name": "a = 5,b = test(erro_code:0)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d9ecce7c-84df-4f14-91ef-2c4c00f86fd3",
+								"exec": [
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"success\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{\bURL}}?a=5&b=test",
+							"host": [
+								"{{\bURL}}"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "5"
+								},
+								{
+									"key": "b",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "a = None, b = string  (erro_code: 11)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eda3febd-09c2-4c40-ada6-5a134671dfd5",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"system error\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{\bURL}}?b=string",
+							"host": [
+								"{{\bURL}}"
+							],
+							"query": [
+								{
+									"key": "b",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "a=5,b=blank(erro_code: 11)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "551b30e3-2edf-4797-b40e-40adc9219f5d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"system error\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{\bURL}}?a=5",
+							"host": [
+								"{{\bURL}}"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "a=string,b=string(erro_code:11)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9847ee5b-df28-4af5-a600-220fb197fc68",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"system error\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{\bURL}}?a=string&b=string",
+							"host": [
+								"{{\bURL}}"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "string"
+								},
+								{
+									"key": "b",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "a=5,b=5(erro_code: 11)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2061018f-8d60-4215-922c-de6ea8232dbc",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"system error\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{\bURL}}?a=5&b=5",
+							"host": [
+								"{{\bURL}}"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "5"
+								},
+								{
+									"key": "b",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
